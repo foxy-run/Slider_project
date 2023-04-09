@@ -1,0 +1,221 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One:regular);
+
+
+@media screen and (max-width: 1300px) {
+    .wrapper {
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    }
+}
+
+body {
+    font-family: Nunito Sans;
+    height: 100%;
+    background-color: rgba(19, 19, 19, 1);
+}
+
+.container {
+    width: 100%;
+    max-width: 1263px;
+    margin: 0px auto;
+}
+
+.projects {
+    
+    height: 1074px;
+}
+
+.projects__row {
+    padding-top: 107px;
+    margin-bottom: 91px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.projects__article {
+    margin-top: 53px;
+    width: 442px;
+}
+
+.projects__title {
+    font-family: Yeseva One;
+    text-transform: uppercase;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: -0.07em;
+    text-align: left;
+    color: rgba(227, 184, 115, 1);
+}
+
+.projects__text {
+    margin-top: 34px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.projects__columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    
+}
+
+.projects__column {
+    margin-top: 34px;
+    height: 64px;
+    min-width: 161px;
+    margin-right: 30px;
+}
+
+.projects__subtitle {
+    font-family: Yeseva One;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(227, 184, 115, 1);
+}
+
+.projects__sentence {
+    margin-top: 9px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.projects__image {
+    width: 679px;
+}
+
+.projects__menu {
+    margin-bottom: 53px;
+}
+
+
+.projects__list {
+    padding: 0px;
+}
+
+
+ li .projects__link .active, .projects__link:hover {
+    color: rgba(227, 184, 115, 1);
+    text-decoration: underline;
+}
+
+.projects__link {
+    padding: 0px;
+    text-transform: uppercase;
+    font-family: Yeseva One;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+
+
+
+
+
+.projects__picture .image {
+    background-size: cover;
+    background-position: center center;
+    height: 482px;
+    width: 679px;
+    position: absolute;
+    /* left: 627px; */
+    /* top: 177px; */
+    opacity: 0;
+    transition: opacity 800ms ease;
+}
+
+.projects__picture .image.active {
+    opacity: 1;
+}
+
+.projects__arrows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 206px;
+    height: 13.5px;
+    margin-top: 80px;
+}
+
+.projects__arrow {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.projects__arrow:hover {
+    opacity: 1;
+}
+
+
+.projects__dots {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 5px;
+  }
+
+  .projects__dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-right: 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+  }
+
+  .projects__dot:hover, .projects__dot.active {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .projects__dot:last-child {
+    margin-right: 29px;
+  }
+
+  .projects__dot:first-child {
+    margin-left: 29px;
+  }
+
+.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    list-style: none;
+}
