@@ -1,14 +1,26 @@
 // set objects with property image + title
 
 let images = [{
-    url: "../../Slider/image/image%202.1.png",
-    title: "Rostov-on-Don, Admiral"
+    url: "../Slider/image/image%202.1.png",
+    title: "Rostov-on-Don, Admiral",
+    city: "Rostov-on-Don",
+    apart: "LCD admiral",
+    area: "81 m2",
+    time: "3.5 months"
 }, {
-    url: "../../Slider/image/image%202.png",
-    title: "Sochi Thieves"
+    url: "../Slider/image/image%202.png",
+    title: "Sochi Thieves",
+    city: "Sochi",
+    apart: "Thieves",
+    area: "105 m2",
+    time: "4 months"
 }, {
-    url: "../../Slider/image/image%203.png",
-    title: "Rostov-on-Don Patriotic"
+    url: "../Slider/image/image%203.png",
+    title: "Rostov-on-Don Patriotic",
+    city: "Rostov-on-Don",
+    apart: "Patriotic",
+    area: "93 m2",
+    time: "3 months"
 }];
 
 
@@ -24,6 +36,9 @@ let sliderImages = document.querySelector(".projects__picture");
 let sliderArrows = document.querySelector(".projects__arrows");
 let sliderDots = document.querySelector(".projects__dots");
 let sliderLinks = document.querySelector(".projects__list");
+let sliderCitys = document.querySelector(".projects__column-city");
+let sliderAreas = document.querySelector(".projects__column-area");
+let sliderTimes = document.querySelector(".projects__column-time");
 
 // call functions
 
@@ -31,6 +46,9 @@ initImages();
 initArrows();
 initDots();
 initLinks();
+initCitys();
+initAreas();
+initTimes();
 
 // function definition initImages
 
@@ -69,8 +87,8 @@ function initDots() {
     sliderDots.querySelectorAll(".projects__dot").forEach(dot => {
         dot.addEventListener("click", function () {
             moveSlider(this.dataset.index);
-        })
-    })
+        });
+    });
 }
 
 
@@ -80,20 +98,54 @@ function initLinks() {
         sliderLinks.innerHTML += linkDiv;
     });
     sliderLinks.querySelectorAll(".projects__link").forEach(linkDiv => {
-        linkDiv.addEventListener("click", function () {
+        linkDiv.addEventListener("click", function (event) {
+            event.preventDefault();
             moveSlider(this.dataset.index);
-        })
-    })
+
+        });
+    });
 }
 
+function initCitys() {
+    images.forEach((elem, index) => {
+        let city = `<div class="projects__city n${index} ${index === 0 ? "active" : ""}" data-index="${index}">${images[index].city}<br>${images[0].apart}</div>`;
+        sliderCitys.innerHTML += city;
+    });
+}
+
+function initAreas() {
+    images.forEach((image, index) => {
+        let area = `<div class="projects__area n${index} ${index === 0 ? "active" : ""}" data-index="${index}">${images[index].area}</div>`;
+        sliderAreas.innerHTML += area;
+    });
+}
+
+function initTimes() {
+    images.forEach((image, index) => {
+        let time = `<div class="projects__time n${index} ${index === 0 ? "active" : ""}" data-index="${index}">${images[index].time}</div>`;
+        sliderTimes.innerHTML += time;
+    });
+}
 
 // function definition moveSlider
 
 function moveSlider(num) {
     sliderImages.querySelector(".active").classList.remove("active");
     sliderImages.querySelector(".n" + num).classList.add("active");
+
     sliderDots.querySelector(".active").classList.remove("active");
     sliderDots.querySelector(".n" + num).classList.add("active");
+
     sliderLinks.querySelector("active").classList.remove("active");
     sliderLinks.querySelector(".n" + num).classList.add("active");
+    
+    sliderCitys.querySelector(".active").classList.remove("active");
+    sliderCitys.querySelector(".n" + num).classList.add("active");
+
+    sliderAreas.querySelector(".active").classList.remove("active");
+    sliderAreas.querySelector(".n" + num).classList.add("active");
+
+    sliderTimes.querySelector(".active").classList.remove("active");
+    sliderTimes.querySelector(".n" + num).classList.add("active");
 }
+

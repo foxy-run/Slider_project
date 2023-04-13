@@ -78,7 +78,7 @@ body {
     
 }
 
-.projects__column {
+.projects__column-city, .projects__column-area, .projects__column-time, .projects__column {
     margin-top: 34px;
     height: 64px;
     min-width: 161px;
@@ -94,6 +94,21 @@ body {
     letter-spacing: 0em;
     text-align: left;
     color: rgba(227, 184, 115, 1);
+}
+
+.projects__city, .projects__area, .projects__time {
+    opacity: 0;
+}
+
+.projects__city.active, .projects__area.active, .projects__time.active {
+    margin-top: 9px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
 }
 
 .projects__sentence {
@@ -119,12 +134,6 @@ body {
     padding: 0px;
 }
 
-
- li .projects__link .active, .projects__link:hover {
-    color: rgba(227, 184, 115, 1);
-    text-decoration: underline;
-}
-
 .projects__link {
     padding: 0px;
     text-transform: uppercase;
@@ -139,9 +148,10 @@ body {
 }
 
 
-
-
-
+.projects__list .projects__link.active  {
+    color: rgba(227, 184, 115, 1);
+    text-decoration: underline;
+}
 
 .projects__picture .image {
     background-size: cover;
@@ -149,10 +159,8 @@ body {
     height: 482px;
     width: 679px;
     position: absolute;
-    /* left: 627px; */
-    /* top: 177px; */
     opacity: 0;
-    transition: opacity 800ms ease;
+    transition: opacity 800ms ease-in-out;
 }
 
 .projects__picture .image.active {
