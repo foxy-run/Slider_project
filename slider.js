@@ -77,7 +77,7 @@ function initArrows() {
     })
 }
 
-//function definition initDots
+//function definition on Init
 
 function initDots() {
     images.forEach((image, index) => {
@@ -108,7 +108,7 @@ function initLinks() {
 
 function initCitys() {
     images.forEach((elem, index) => {
-        let city = `<div class="projects__city n${index} ${index === 0 ? "active" : ""}" data-index="${index}">${images[index].city}<br>${images[0].apart}</div>`;
+        let city = `<div class="projects__city n${index} ${index === 0 ? "active" : ""}" data-index="${index}">${images[index].city}<br>${images[index].apart}</div>`;
         sliderCitys.innerHTML += city;
     });
 }
@@ -136,9 +136,9 @@ function moveSlider(num) {
     sliderDots.querySelector(".active").classList.remove("active");
     sliderDots.querySelector(".n" + num).classList.add("active");
 
-    sliderLinks.querySelector("active").classList.remove("active");
+    sliderLinks.querySelector(".active").classList.remove("active");
     sliderLinks.querySelector(".n" + num).classList.add("active");
-    
+
     sliderCitys.querySelector(".active").classList.remove("active");
     sliderCitys.querySelector(".n" + num).classList.add("active");
 

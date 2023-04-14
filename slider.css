@@ -98,6 +98,8 @@ body {
 
 .projects__city, .projects__area, .projects__time {
     opacity: 0;
+    position: absolute;
+
 }
 
 .projects__city.active, .projects__area.active, .projects__time.active {
@@ -148,9 +150,9 @@ body {
 }
 
 
-.projects__list .projects__link.active  {
+.projects__list .projects__link.active, .projects__link:hover   {
     color: rgba(227, 184, 115, 1);
-    text-decoration: underline;
+    border-bottom: 1px solid rgba(227, 184, 115, 1);
 }
 
 .projects__picture .image {
